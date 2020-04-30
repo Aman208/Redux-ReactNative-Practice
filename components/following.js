@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View  , TouchableOpacity,FlatList}  from "react-native";
+import {  View  , FlatList}  from "react-native";
 import { ListItem , Icon } from "react-native-elements";
 import { connect } from "react-redux";
 
@@ -8,12 +8,13 @@ import { connect } from "react-redux";
 class Following extends Component {
     keyExtractor = (item, index) => index.toString();
 
-    renderItem = ({ item }) => (
+    renderItem = ({ item , index }) => (
         <ListItem
           title={item.name}
           subtitle={item.subtitle}
           leftAvatar={{ source: { uri: item.avatar_url } }}
           bottomDivider
+          onPress={()=> this.props.onUnFollowUser(item.id)}
           chevron
           rightTitle={"UnFollow"}
           rightIcon = { <Icon
@@ -44,5 +45,11 @@ var mapStatetoProps = (state) => {
   };
 };
 
+function mapDispatchToProps(dispatch) {
+  return {
+    onUnFollowUser: (index) => dispatch({ type: "UNFOLLOW" , userid : index  }),
+  };
+} 
 
-export default connect(mapStatetoProps)(Following);
+
+export default connect(mapStatetoProps , mapDispatchToProps)(Following);

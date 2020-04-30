@@ -20,19 +20,17 @@ var intialState = {
 function followerReducer(state = intialState, action) {
   switch (action.type) {
    
-    case "FOLLOW_HIM":
+    case "FOLLOW":
       return {
         ...state,
-        following: [...state.following, action.user],
+        following: [...state.following, state.follower[action.userid] ],
       };
-    case "UNFOLLOW_HIM":
+    case "UNFOLLOW":
       return {
         ...state,
-        following: state.following.filter((item) => item !== action.userid),
+        following: state.following.filter((item) => item.id !== action.userid),
       };
-    case "INC" : {
-      return {...state , counter : counter+1}
-    }  
+   
   }
   return state;
 }

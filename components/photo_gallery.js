@@ -83,11 +83,7 @@ var mapStatetoProps = (state) => {
   };
 };
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     onIncCounter: () => dispatch({ type: "INC" }),
-//   };
-// }
+
 
 export default connect(mapStatetoProps)(ImageGallery);
 

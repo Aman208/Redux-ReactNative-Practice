@@ -7,8 +7,9 @@ import { connect } from "react-redux";
 class Follower extends Component {
     keyExtractor = (item, index) => index.toString();
 
-    renderItem = ({ item }) => (
+    renderItem = ({ item , index }) => (
         <ListItem
+         onPress = {() => {this.props.onFollowUser(index)}}
           title={item.name}
           subtitle={item.subtitle}
           leftAvatar={{ source: { uri: item.avatar_url } }}
@@ -47,5 +48,11 @@ var mapStatetoProps = (state) => {
     };
   };
 
+ function mapDispatchToProps(dispatch) {
+  return {
+    onFollowUser: (index) => dispatch({ type: "FOLLOW" , userid : index  }),
+  };
+} 
 
-export default connect(mapStatetoProps)(Follower);
+
+export default connect(mapStatetoProps , mapDispatchToProps)(Follower);

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet,  View } from "react-native";
 import {AppRegistry} from 'react-native'
 
-import Profile from "./components/profile";
+import ProfileHeader from "./components/profileHeader";
 import Navbar from "./components/navbar";
 
 import { Provider } from "react-redux";
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import { createStore, combineReducers } from "redux";
 
 import imageReducer from "./store/reducer/image";
 import folllowerReducer from "./store/reducer/follower";
@@ -26,7 +26,7 @@ export default class App extends Component {
         <Provider store={store}>
         <View style={styles.container}>
           <View style={{ flex: 3 }}>
-            <Profile />
+            <ProfileHeader />
           </View>
           <View style={{ flex: 8 }}>
             <Navbar />
