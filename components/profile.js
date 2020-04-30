@@ -42,14 +42,17 @@ export default class Profile extends Component {
           <View
             style={{
               flex: 1,
+           
+              alignItems : "center"
             }}
           >
             
 
-            <Text style={{ color: "white", fontSize: 20, margin: 6 }}>
-              {"Title"}
+            <Text style={{ color: "white", fontSize: 20, margin: 4 }}>
+              {"Dhruv Ramdev"}
             </Text>
-            <Text style={{ color: "white", margin: 6 }}>{"Subtitle"}</Text>
+            <Text style={{ color: "white", margin: 4 , fontSize: 14,}}>{"New Delhi, Delhi"}</Text>
+            <Text style={{ color: "white", margin: 6  , fontSize: 10,}}>Random Bio for Random People {"\n"}Don't Forget to like my pics</Text>
           </View>
         </View>
       </View>

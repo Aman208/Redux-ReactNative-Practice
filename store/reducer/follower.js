@@ -1,18 +1,25 @@
 var intialState = {
   follower: [
-    { id: "f1", name: "Aman Keshri", userid: "aman208" },
-    { id: "f2", name: "Niraj Oswal", userid: "niraj123" },
+    { id: "f1",
+      name: "Amy Farha",
+      avatar_url:
+        "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
+      subtitle: "Vice President",
+    },
+    { id: "f2",
+      name: "Chris Jackson",
+      avatar_url:
+        "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg",
+      subtitle: "Vice Chairman",
+    },
   ],
+
   following: [],
-  counter: 0,
 };
 
 function followerReducer(state = intialState, action) {
   switch (action.type) {
-    case "BLOCK":
-      return {
-        follower: state.follower.filter((item) => item !== action.userid),
-      };
+   
     case "FOLLOW_HIM":
       return {
         ...state,
