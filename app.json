@@ -2,6 +2,10 @@
   "expo": {
     "name": "yboxTask",
     "slug": "yboxTask",
+    "android": {
+      "package": "com.yourcompany.yourappname",
+      "versionCode": 1
+    } ,
     "platforms": [
       "ios",
       "android",
